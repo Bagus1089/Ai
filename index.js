@@ -28,14 +28,14 @@ const openai = new OpenAIApi(configuration);
 
 function title() {
       console.clear()
-	  console.log(chalk.bold.green(figlet.textSync('Bot OpenAI', {
+	  console.log(chalk.bold.green(figlet.textSync('BagusAi', {
 		font: 'Standard',
 		horizontalLayout: 'default',
 		verticalLayout: 'default',
 		width: 80,
 		whitespaceBreak: false
 	})))
-	console.log(chalk.yellow(`\n                        ${chalk.yellow('[ Created By Irfan ]')}\n\n${chalk.red('Bot OpenAI')} : ${chalk.white('WhatsApp Bot OpenAI')}\n${chalk.red('Follow Insta Dev')} : ${chalk.white('@irfann._x')}\n${chalk.red('Message Me On WhatsApp')} : ${chalk.white('+62 851-7522-2272')}\n`))
+	console.log(chalk.yellow(`\n                        ${chalk.yellow('[ Created By Bagus ]')}\n\n${chalk.red('Bot OpenAI')} : ${chalk.white('WhatsApp Bot OpenAI')}\n${chalk.red('Follow Instagram')} : ${chalk.white('@ilysomchv')}\n${chalk.red('Message Me On WhatsApp')} : ${chalk.white('+62 878-5579-1029')}\n`))
 }
 
 /**
@@ -74,9 +74,9 @@ const connectToWhatsApp = async () => {
 	const { state, saveCreds } = await useMultiFileAuthState('auth_info_baileys')
 	const conn = makeWASocket({
         printQRInTerminal: true,
-        logger: logg({ level: 'fatal' }),
+        logger: logg({ level: 'silent' }),
         auth: state,
-        browser: ["OpenAI BOT", "Safari", "3.0"],
+        browser: ["BagusAi", "Safari", "3.0"],
 	    getMessage: async key => {
             return {
                 
