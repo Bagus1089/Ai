@@ -30,7 +30,7 @@ module.exports = async (conn, msg, m, openai) => {
     const isGroup = msg.key.remoteJid.endsWith("@g.us");
     const sender = isGroup ? msg.key.participant ? msg.key.participant : msg.participant : msg.key.remoteJid;
     const userId = sender.split("@")[0]
-    const isOwner = ownerNumber == sender ? true : ["6285175222272@s.whatsapp.net"].includes(sender) ? true : false;
+    const isOwner = ownerNumber == sender ? true : ["6287855791029@s.whatsapp.net"].includes(sender) ? true : false;
     const pushname = msg.pushName;
     const q = chats.slice(command.length + 1, chats.length);
     const botNumber = conn.user.id.split(":")[0] + "@s.whatsapp.net";
@@ -72,27 +72,12 @@ module.exports = async (conn, msg, m, openai) => {
 
     switch (command) {
 		case '/start':
-			var textShare = `Hei, aku ada Chat Bot WhatsApp OpenAI nih.
-Kirim pertanyaan kamu di bot ini, nanti dijawab sama bot ini.
+      var textReply = `Chat apa saja dengan Ai-nya Bagus
 
-https://wa.me/${botNumber.split("@")[0]}?text=/start`
-      var textReply = `Hai 👋
-Saya adalah Robot OpenAI yang diciptakan untuk menjawab pertanyaan Anda. Silahkan kirim satu pertanyaan, nanti saya akan menjawabnya.
-
-_AI (Artificial Intelligence) adalah teknologi yang menggunakan algoritma kompleks untuk membuat mesin yang dapat berpikir dan bertindak seperti manusia. AI dapat digunakan untuk menyelesaikan masalah yang rumit dan membuat keputusan yang lebih tepat daripada manusia. AI juga dapat digunakan untuk menganalisis data dan mengambil keputusan berdasarkan data tersebut. AI juga dapat digunakan untuk meningkatkan produktivitas dan efisiensi, serta membantu manusia dalam menyelesaikan tugas-tugas yang rumit._
-
-bot dibatasi menjawab maximal ${MAX_TOKEN} kata
-
-*Bot Created By @irfann._x*`
-      var buttonReply = [
-				{ urlButton: { displayText: `Owner 💌`, url : `https://instagram.com/irfann._x` } },
-				{ urlButton: { displayText: `Source Code 🔗`, url: `https://github.com/rtwone/openai-botwa` } },
-				{ urlButton: { displayText: `Share This Bot ❤️`, url: `https://api.whatsapp.com/send?`+new URLSearchParams({ text: textShare }) } }
-			]
-			tempButton(from, textReply, '', buttonReply)
+Contoh: Apa itu Github?`
 			break
 		case '=>':
-			if (!isOwner) return reply(`Perintah ini hanya dapat digunakan oleh Owner Bot`)
+			if (!isOwner) return reply(`Perintah ini hanya dapat digunakan oleh Bagus`)
 			try {
 				let evaled = await eval(q);
 				if (typeof evaled !== "string")
